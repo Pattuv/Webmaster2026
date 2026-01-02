@@ -3,3 +3,7 @@ Links
 https://daisyui.com/components/
 
 https://icons.getbootstrap.com/
+
+
+Fonts:
+classnames = Libre, Poppins
