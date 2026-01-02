@@ -1,7 +1,5 @@
-import "./App.css";
-
 function App() {
-  return <p className="text-2xl font-bold text-center">Hello React!</p>;
+  return <div></div>;
 }
 
 export default App;
