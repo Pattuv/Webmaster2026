@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --main: #ffe9d4;
+  --accent: #5d0000;
+}
+
+#root {
+  height: 100%;
+}
+
 .libre {
   font-family: "Libre Baskerville", serif;
 }
@@ -8,7 +17,6 @@
   font-family: "Poppins", serif;
 }
 
-*,
 body {
-  background-color: #fffaf5;
+  background-color: var(--main) !important;
 }
