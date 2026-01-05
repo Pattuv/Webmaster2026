@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --main: #ffe9d4;
+  --main: #ffefdf;
   --accent: #5d0000;
 }
 
@@ -19,4 +19,13 @@
 
 body {
   background-color: var(--main) !important;
+}
+
+/* Hide scrollbars visually but keep scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
