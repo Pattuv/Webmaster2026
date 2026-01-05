@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+:root {
+  --main: #ffe9d4;
+  --accent: #5d0000;
+}
+
+#root {
+  height: 100%;
+}
+
+.libre {
+  font-family: "Libre Baskerville", serif;
+}
+
+.poppins {
+  font-family: "Poppins", serif;
+}
+
+body {
+  background-color: var(--main) !important;
+}

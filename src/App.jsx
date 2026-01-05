@@ -1,7 +1,11 @@
-import "./App.css";
+import Navbar from "./components/Navbar/Navbar.jsx";
 
 function App() {
-  return <p className="text-2xl font-bold text-center">Hello React!</p>;
+  return (
+    <div className="min-h-screen ">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;
