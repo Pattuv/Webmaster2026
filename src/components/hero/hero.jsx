@@ -1,16 +1,47 @@
-//This is boilerplate code. Paste this into every new component you create, and start writing html in the return().
-import "./hero.css"; //Replace the name with the name of your css file for the component (You should name ur css the same as your component)
+import { useState, useEffect } from "react";
+import "./hero.css";
+import Gallery from "../Gallery/Gallery.jsx";
 
-// Change the function name to whatever your component is (Ex: Button, Navbar, etc.)
-function hero() {
+// Import your 5 images
+import img1 from "./Gallery/1.png";
+import img2 from "./Gallery/2.png";
+import img3 from "./Gallery/3.png";
+import img4 from "./Gallery/4.png";
+import img5 from "./Gallery/5.png";
+
+function Hero() {
+  const [showGallery, setShowGallery] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => setShowGallery(window.innerWidth > 768);
+    window.addEventListener("resize", handleResize);
+    handleResize(); // initial state
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    // This is where you write your HTML. When writing remember there can only be one parent html tag in the return().
-    <div>
-      This is an example React function. Copy this into your component start
-      coding!
+    <div className="hero-container" id="hero">
+      {showGallery && (
+        <Gallery img1={img1} img2={img2} img3={img3} img4={img4} img5={img5} />
+      )}
+      <h1 className="libre">
+        Your gateway to tools, events, and connections that enrich life in
+        Suwanee.
+      </h1>
+      <h3 className="poppins">
+        Access hundreds of quality resources for any individual regardless of
+        background via Suwanee’s most robust community hub.
+      </h3>
+      <div className="button">
+        <a href="#manifesto">
+          <button className="btn btn-neutral">Our Mission</button>
+        </a>
+        <a href="/resources">
+          <button className="btn btn-outline">View Resources</button>
+        </a>
+      </div>
     </div>
   );
 }
 
-// Copy this too! This allows your component to be used anywhere in the project
-export default hero;
+export default Hero;

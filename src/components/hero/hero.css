@@ -9,7 +9,7 @@
 }
 
 /* Main heading */
-.libre {
+.hero-container .libre {
   max-width: 1100px;
   font-size: 3rem; /* visually strong but not overwhelming */
   font-weight: 500;
@@ -18,7 +18,7 @@
 }
 
 /* Subheading */
-.Poppins {
+.hero-container .poppins {
   max-width: 850px;
   font-size: 1.25rem; /* readable, natural size */
   font-weight: 400;
@@ -60,30 +60,18 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .libre {
+  .hero-container .libre {
     font-size: 2.25rem;
   }
-  .Poppins {
+  .hero-container .Poppins {
     font-size: 1.1rem;
   }
 }
 @media (max-width: 480px) {
-  .libre {
+  .hero-container .libre {
     font-size: 1.8rem;
   }
-  .Poppins {
+  .hero-container .Poppins {
     font-size: 1rem;
   }
-}
-
-/* Make sure the container is relative for z-index effects */
-.my-4 > div {
-  transition: transform 0.3s ease, z-index 0s; /* smooth scale, z-index instant */
-  will-change: transform; /* improves performance */
-}
-
-/* Hover effect */
-.my-4 > div:hover {
-  transform: scale(1.15) !important; /* scale up */
-  z-index: 10 !important; /* bring on top */
 }
