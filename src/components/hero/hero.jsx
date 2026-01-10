@@ -1,30 +1,36 @@
-import "./hero.css"; 
+import { useState, useEffect } from "react";
+import "./hero.css";
 import Gallery from "../Gallery/Gallery.jsx";
 
-// Change the function name to whatever your component is (Ex: Button, Navbar, etc.)
-function hero() {
-  return (
-    // This is where you write your HTML. When writing remember there can only be one parent html tag in the return().
+function Hero() {
+  const [showGallery, setShowGallery] = useState(true);
 
-    <div class="hero-container" id="hero">
-      <Gallery />
-      <h1 class="libre">
+  useEffect(() => {
+    const handleResize = () => setShowGallery(window.innerWidth > 768);
+    window.addEventListener("resize", handleResize);
+    handleResize(); // set initial state
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className="hero-container" id="hero">
+      {showGallery && <Gallery />}
+      <h1 className="libre">
         Your gateway to tools, events, and connections that enrich life in
         Suwanee.
       </h1>
-      <h3 class="poppins">
+      <h3 className="poppins">
         Access hundreds of quality resources for any individual regardless of
         background via Suwanee’s most robust community hub.
       </h3>
-      <div class="button">
-        <a href="#manifesto"><button class="btn btn-neutral">Our Mission</button></a>
-        
-        <button class="btn btn-outline">View Resources</button>
+      <div className="button">
+        <a href="#manifesto">
+          <button className="btn btn-neutral">Our Mission</button>
+        </a>
+        <button className="btn btn-outline">View Resources</button>
       </div>
-
     </div>
   );
 }
 
-// Copy this too! This allows your component to be used anywhere in the project
-export default hero;
+export default Hero;
