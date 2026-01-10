@@ -6,6 +6,7 @@ import volunteering from "./volunteering.jpg"
 import community from "./community.png";
 import Card from "./Card"
 
+
 function next() {
   return  (
   <div id="manifesto">
